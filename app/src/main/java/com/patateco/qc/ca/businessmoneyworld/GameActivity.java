@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -73,8 +74,10 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 txtTest.setText("Pays");
+                startActivity(new Intent(GameActivity.this,MenuPays.class));
             }
         });
+
 
         ImageButton btnNext = (ImageButton) this.findViewById(R.id.btnNext);
         btnNext.setOnClickListener(new View.OnClickListener() {
