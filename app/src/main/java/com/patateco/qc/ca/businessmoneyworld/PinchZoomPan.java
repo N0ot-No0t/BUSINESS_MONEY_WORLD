@@ -79,17 +79,19 @@ break;
 
        }
    }
+   return true;
 }
 
 protected void onDraw (Canvas canvas){
     super.onDraw(canvas);
 
-    if (mBitmap != null){
-        canvas.save();
-        canvas.scale(mScaleFactor, mScaleFactor);
-        canvas.drawBitmap(mBitmap, 0, 0, null);
-canvas.restore();
-    }
+//    if (mBitmap != null){
+//        canvas.save();
+//        canvas.scale(mScaleFactor, mScaleFactor);
+//        canvas.drawBitmap(mBitmap, 0, 0, null);
+//canvas.restore();
+//    }
+
 }
     private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
         @Override

@@ -33,7 +33,7 @@ protected PinchZoomPan pinchZoomPan;
         setContentView(R.layout.activity_game);
 
 pinchZoomPan = (PinchZoomPan) findViewById(R.id.imgCarte);
-bitmap = (Bitmap) findViewById( R.id.imgCarte);
+//bitmap = (Bitmap) findViewById( R.id.imgCarte);
 
           final TextView txtTest = (TextView)findViewById(R.id.txtTest);
 
