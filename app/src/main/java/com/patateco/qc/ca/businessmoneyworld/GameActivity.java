@@ -3,6 +3,7 @@ package com.patateco.qc.ca.businessmoneyworld;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -16,7 +17,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 public class GameActivity extends AppCompatActivity {
+
+    private ImageView imageView;
+    private Button getImage;
+protected PinchZoomPan pinchZoomPan;
+    private Bitmap bitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +33,11 @@ public class GameActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_game);
 
-
+pinchZoomPan = (PinchZoomPan) findViewById(R.id.imgCarte);
+//bitmap = (Bitmap) findViewById( R.id.imgCarte);
 
           final TextView txtTest = (TextView)findViewById(R.id.txtTest);
-//
-//        final ImageView imgCartezoom = (ImageView)findViewById(R.id.imgCarte);
-//        final Animation zoomAnimation = AnimationUtils.loadAnimation(this, R.anim.zoom);
-//        imgCartezoom.startAnimation(zoomAnimation);
+
 
 
         ImageButton btnSettings = (ImageButton) this.findViewById(R.id.btnSettings);
@@ -90,7 +95,6 @@ public class GameActivity extends AppCompatActivity {
 
 
 
-        //Personnage personnage = new Personnage(22);
 
 
 
