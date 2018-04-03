@@ -36,7 +36,7 @@ public class GameActivity extends AppCompatActivity {
 
         Bitmap bitmap = null;
 
-imageView.setImageBitmap(bitmap);
+//imageView.setImageBitmap(bitmap);
 
           final TextView txtTest = (TextView)findViewById(R.id.txtTest);
 

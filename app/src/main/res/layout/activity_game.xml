@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/settings" />
 
-    <com.patateco.qc.ca.businessmoneyworld.PinchZoomPan
+    <ImageView
         android:id="@+id/imgCarte"
         android:layout_width="549dp"
         android:layout_height="match_parent"
