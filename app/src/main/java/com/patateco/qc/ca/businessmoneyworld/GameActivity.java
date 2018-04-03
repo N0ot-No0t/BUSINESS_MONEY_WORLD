@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.nfc.Tag;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -18,6 +20,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 
 public class GameActivity extends AppCompatActivity {
 
@@ -25,6 +29,8 @@ public class GameActivity extends AppCompatActivity {
     private Button getImage;
 
     private Bitmap bitmap;
+
+    ArrayList<ImageButton> listeBtnPays = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,18 +40,25 @@ public class GameActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_game);
 
+        for (int i = 0; i < 25;i++){
+
+            //listeBtnPays.get(i) = new ImageButton();
+
+        }
+
         Bitmap bitmap = null;
 
-imageView.setImageBitmap(bitmap);
+        //imageView.setImageBitmap(bitmap);
 
-          final TextView txtTest = (TextView)findViewById(R.id.txtTest);
+          //final TextView txtTest = (TextView)findViewById(R.id.txtTest);
 
+          imageView =(ImageView) this.findViewById(R.id.imgPays);
 
         ImageButton btnSettings = (ImageButton) this.findViewById(R.id.btnSettings);
         btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtTest.setText("Settings");
+
             }
         });
 
@@ -54,7 +67,7 @@ imageView.setImageBitmap(bitmap);
         btnPers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtTest.setText("Personnage");
+
                 startActivity(new Intent(GameActivity.this,MenuPersonnage.class));
             }
         });
@@ -63,7 +76,7 @@ imageView.setImageBitmap(bitmap);
         btnNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtTest.setText("News");
+
             }
         });
 
@@ -71,7 +84,7 @@ imageView.setImageBitmap(bitmap);
         btnAction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtTest.setText("Actions");
+
             }
         });
 
@@ -79,7 +92,7 @@ imageView.setImageBitmap(bitmap);
         btnPays.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtTest.setText("Pays");
+
                 startActivity(new Intent(GameActivity.this,MenuPays.class));
             }
         });
@@ -89,7 +102,7 @@ imageView.setImageBitmap(bitmap);
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtTest.setText("Next");
+
             }
         });
 
@@ -112,6 +125,22 @@ imageView.setImageBitmap(bitmap);
 
 
 
+
+    }
+
+
+    public ImageButton creerListener(int btn){
+
+        ImageButton imgBtn = (ImageButton) this.findViewById(R.id.nomPays);
+
+        imgBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //txtTest.setText(imgBtn.getTag());
+            }
+        });
+
+        return imgBtn;
 
     }
 }

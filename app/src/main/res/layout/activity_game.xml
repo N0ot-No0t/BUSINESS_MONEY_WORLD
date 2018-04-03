@@ -24,20 +24,20 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/settings" />
 
-    <com.patateco.qc.ca.businessmoneyworld.PinchZoomPan
+
+    <ImageView
         android:id="@+id/imgCarte"
         android:layout_width="549dp"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/interface_carte"
-        app:layout_constraintBottom_toBottomOf="parent"
 
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnNext"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-
 
     <ImageButton
         android:id="@+id/btnPersonnage"
@@ -48,13 +48,13 @@
         android:scaleType="fitXY"
         android:translationZ="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnAction"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btnPays"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.135"
-        app:srcCompat="@drawable/avatar"
-        app:layout_constraintBottom_toTopOf="@+id/btnAction" />
+        app:layout_constraintVertical_bias="0.81"
+        app:srcCompat="@drawable/avatar" />
 
     <ImageButton
         android:id="@+id/btnNews"
@@ -64,13 +64,13 @@
         android:scaleType="fitXY"
         android:translationZ="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnPays"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.396"
-        app:srcCompat="@drawable/news"
-        app:layout_constraintBottom_toTopOf="@+id/btnPays" />
+        app:layout_constraintVertical_bias="0.865"
+        app:srcCompat="@drawable/news" />
 
     <ImageButton
         android:id="@+id/btnAction"
@@ -81,13 +81,13 @@
         android:scaleType="fitXY"
         android:translationZ="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnNews"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.998"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619"
-        app:srcCompat="@drawable/action"
-        app:layout_constraintBottom_toTopOf="@+id/btnNews" />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/action" />
 
     <ImageButton
         android:id="@+id/btnPays"
@@ -98,13 +98,13 @@
         android:scaleType="fitXY"
         android:translationZ="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnNext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.992"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.819"
-        app:srcCompat="@drawable/pays"
-        app:layout_constraintBottom_toTopOf="@+id/btnNext" />
+        app:layout_constraintVertical_bias="0.971"
+        app:srcCompat="@drawable/pays" />
 
     <ImageButton
         android:id="@+id/btnNext"
@@ -121,23 +121,8 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/next" />
 
-    <TextView
-        android:id="@+id/txtTest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="50dp"
-        android:text="BMW"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.038"
-        app:layout_constraintStart_toStartOf="@+id/imgCarte"
-        app:layout_constraintTop_toTopOf="@+id/imgCarte"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btnPersonnage" />
-
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btnFrance"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -155,7 +140,7 @@
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton24"
+        android:id="@+id/btnAllemagne"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -173,7 +158,7 @@
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton23"
+        android:id="@+id/btnMaroc"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -191,7 +176,7 @@
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton22"
+        android:id="@+id/btnEspagne"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -209,7 +194,7 @@
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton21"
+        android:id="@+id/btnIran"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -227,7 +212,7 @@
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton20"
+        android:id="@+id/btnRussie"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -238,14 +223,14 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.559"
+        app:layout_constraintHorizontal_bias="0.655"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.247"
+        app:layout_constraintVertical_bias="0.235"
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton19"
+        android:id="@+id/btnUK"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -263,7 +248,7 @@
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton18"
+        android:id="@+id/btnColombie"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -281,7 +266,7 @@
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton17"
+        android:id="@+id/btnMexique"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -299,7 +284,7 @@
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton16"
+        android:id="@+id/btnUS"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -317,7 +302,7 @@
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton15"
+        android:id="@+id/btnCanada"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -335,7 +320,7 @@
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton14"
+        android:id="@+id/btnNorvege"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -353,7 +338,7 @@
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton13"
+        android:id="@+id/btnSuede"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -371,7 +356,7 @@
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton12"
+        android:id="@+id/btnArabieS"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -389,7 +374,7 @@
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton11"
+        android:id="@+id/btnCuba"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -400,14 +385,13 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359"
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton10"
+        android:id="@+id/btnCongo"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -425,7 +409,43 @@
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton9"
+        android:id="@+id/btnInde"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imgCarte"
+        app:layout_constraintHorizontal_bias="0.671"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498"
+        app:srcCompat="@drawable/marker" />
+
+    <ImageButton
+        android:id="@+id/btnArgentine"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.279"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.825"
+        app:srcCompat="@drawable/marker" />
+
+    <ImageButton
+        android:id="@+id/btnItalie"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -443,7 +463,7 @@
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton8"
+        android:id="@+id/btnBresil"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -454,14 +474,14 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.305"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359"
+        app:layout_constraintVertical_bias="0.684"
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/btnAustralie"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -472,14 +492,14 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.76"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359"
+        app:layout_constraintVertical_bias="0.781"
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/btnJapon"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -490,14 +510,14 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.77"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359"
+        app:layout_constraintVertical_bias="0.42000002"
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/btnChine"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -508,14 +528,14 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.676"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359"
+        app:layout_constraintVertical_bias="0.41000003"
         app:srcCompat="@drawable/marker" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/btnAfriqueS"
         android:layout_width="4dp"
         android:layout_height="4dp"
         android:layout_marginBottom="8dp"
@@ -526,46 +546,10 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359"
-        app:srcCompat="@drawable/marker" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="4dp"
-        android:layout_height="4dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359"
-        app:srcCompat="@drawable/marker" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="4dp"
-        android:layout_height="4dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359"
+        app:layout_constraintVertical_bias="0.793"
         app:srcCompat="@drawable/marker" />
 
 </android.support.constraint.ConstraintLayout>
