@@ -5,12 +5,18 @@ package com.patateco.qc.ca.businessmoneyworld;
  */
 
 public class Personnage {
-
+    String name;
     int age;
+    double creditScore;
+    double currentCash;
+    double stocks;
 
-    public Personnage(int age){
-
+    public Personnage(String name,int age, double creditScore,double currentCash,double stocks){
+        this.name = name;
         this.age = age;
+        this.creditScore = creditScore;
+        this.currentCash = currentCash;
+        this.stocks = stocks;
 
     }
 
