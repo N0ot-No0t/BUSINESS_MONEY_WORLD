@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -22,7 +23,7 @@ public class GameActivity extends AppCompatActivity {
 
     private ImageView imageView;
     private Button getImage;
-protected PinchZoomPan pinchZoomPan;
+
     private Bitmap bitmap;
 
     @Override
@@ -33,11 +34,11 @@ protected PinchZoomPan pinchZoomPan;
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_game);
 
-pinchZoomPan = (PinchZoomPan) findViewById(R.id.imgCarte);
-//bitmap = (Bitmap) findViewById( R.id.imgCarte);
+        Bitmap bitmap = null;
+
+imageView.setImageBitmap(bitmap);
 
           final TextView txtTest = (TextView)findViewById(R.id.txtTest);
-
 
 
         ImageButton btnSettings = (ImageButton) this.findViewById(R.id.btnSettings);
@@ -91,6 +92,18 @@ pinchZoomPan = (PinchZoomPan) findViewById(R.id.imgCarte);
                 txtTest.setText("Next");
             }
         });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
