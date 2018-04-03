@@ -15,8 +15,13 @@ import android.widget.TextView;
  */
 
 public class MenuPays extends Activity {
-    int[] IMAGES = {R.drawable.canada_icon, R.drawable.avatar, R.drawable.news,R.drawable.pays,R.drawable.settings};
-    String[] NAMES = {"CANADA","TEST","NEWS","PAYS","SETTINGS"};
+    int[] IMAGES = {R.drawable.icon_argentina,R.drawable.icon_australia,R.drawable.icon_brazil,R.drawable.canada_icon, R.drawable.icon_china, R.drawable.icon_colombia,R.drawable.icon_cuba,R.drawable.icon_drc,
+            R.drawable.icon_france,R.drawable.icon_germany,R.drawable.icon_india,R.drawable.icon_iran,R.drawable.icon_italie,R.drawable.icon_japan,
+            R.drawable.icon_mexico,R.drawable.icon_morroco,R.drawable.icon_norway,R.drawable.icon_rsa,R.drawable.icon_russia,
+            R.drawable.icon_saudia_arabia,R.drawable.icon_spain,R.drawable.icon_sweden,R.drawable.icon_uk,R.drawable.icon_usa};
+
+    String[] NAMES = {"ARGENTINA","AUSTRALIA","BRAZIL","CANADA","CHINA","COLOMBIA","CUBA","DEMOCRATIC REPUBLIC OF CONGO","FRANCE","GERMANY","INDIA","IRAN",
+            "ITALY","JAPAN","MEXICO","MORROCO","NORWAY","SOUTH AFRICA","SAUDIA ARABIA","SPAIN","SWEDEN","UNITED KINGDOM","UNITED STATES OF AMERICA"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
