@@ -33,18 +33,7 @@
         android:layout_toStartOf="@+id/btnNext"
         android:background="@drawable/interface_carte"
         app:layout_constraintBottom_toBottomOf="parent"
-
         app:layout_constraintEnd_toEndOf="parent"
-<<<
-
-    <
-
-    <<< HEAD
-        app:layout_constraintEnd_toStartOf="@+id/btnNext"
-        app:layout_constraintHorizontal_bias="0.38"
-=======
-        app:layout_constraintHorizontal_bias="0.0"
->>>>>>> dc38714c9d317245d579df8d4f4b8d4254b2dd43
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
