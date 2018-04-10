@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
+import android.net.Uri;
+import android.nfc.Tag;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -13,25 +16,21 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import java.util.ArrayList;
 
 
 public class GameActivity extends AppCompatActivity {
 
     private ImageView imageView;
     private Button getImage;
-    protected PinchZoomPan pinchZoomPan;
+
     private Bitmap bitmap;
-    TextView montant;
-    Personnage joueur = new Personnage(20,1000);
-    Pays cuba = new Pays("dsad",1, "neutre");
 
-
+    ArrayList<ImageButton> listeBtnPays = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,21 +40,25 @@ public class GameActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_game);
 
+        for (int i = 0; i < 25;i++){
 
+            //listeBtnPays.get(i) = new ImageButton();
 
-        final TextView txtTest = (TextView)findViewById(R.id.txtTest);
-        montant = (TextView) findViewById(R.id.montant);
-        int afficheMontant = joueur.getArgent();
-        montant.setText(String.valueOf(afficheMontant));
+        }
 
+        Bitmap bitmap = null;
 
+        //imageView.setImageBitmap(bitmap);
 
+          //final TextView txtTest = (TextView)findViewById(R.id.txtTest);
+
+          imageView =(ImageView) this.findViewById(R.id.imgPays);
 
         ImageButton btnSettings = (ImageButton) this.findViewById(R.id.btnSettings);
         btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtTest.setText("Settings");
+
             }
         });
 
@@ -64,9 +67,8 @@ public class GameActivity extends AppCompatActivity {
         btnPers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtTest.setText("Personnage");
-                startActivity(new Intent(GameActivity.this,MenuPersonnage.class));
 
+                startActivity(new Intent(GameActivity.this,MenuPersonnage.class));
             }
         });
 
@@ -74,7 +76,7 @@ public class GameActivity extends AppCompatActivity {
         btnNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtTest.setText("News");
+
             }
         });
 
@@ -82,8 +84,7 @@ public class GameActivity extends AppCompatActivity {
         btnAction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtTest.setText("Actions");
-                startActivity(new Intent(GameActivity.this,MenuAction.class));
+
             }
         });
 
@@ -91,7 +92,7 @@ public class GameActivity extends AppCompatActivity {
         btnPays.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtTest.setText("Pays");
+
                 startActivity(new Intent(GameActivity.this,MenuPays.class));
             }
         });
@@ -101,7 +102,7 @@ public class GameActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtTest.setText("Next");
+
             }
         });
 
@@ -112,6 +113,34 @@ public class GameActivity extends AppCompatActivity {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+    public ImageButton creerListener(int btn){
+
+        ImageButton imgBtn = (ImageButton) this.findViewById(R.id.nomPays);
+
+        imgBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //txtTest.setText(imgBtn.getTag());
+            }
+        });
+
+        return imgBtn;
 
     }
 }

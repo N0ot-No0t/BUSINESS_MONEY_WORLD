@@ -6,8 +6,6 @@ import android.util.DisplayMetrics;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 
 /**
  * Created by Noot on 13/03/2018.
