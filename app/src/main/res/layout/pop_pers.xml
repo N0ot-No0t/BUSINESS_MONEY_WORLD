@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:id="@+id/relativeLayout2">
+    android:layout_width="match_parent" android:layout_height="match_parent">
 
+    <ImageButton
+        android:id="@+id/btnCan"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="133dp"
+        android:layout_marginTop="33dp"
+        android:background="@drawable/canada_icon"
+        android:scaleType="fitXY"
+        android:translationZ="1dp"
+        app:srcCompat="@drawable/canada_icon" />
 
+<<<<<<< HEAD
     <TextView
         android:id="@+id/enterName"
         android:layout_width="133dp"
@@ -47,3 +59,16 @@
         tools:layout_editor_absoluteY="139dp" />
 
 </android.support.constraint.ConstraintLayout>
+=======
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="91dp"
+        android:id="@+id/listView" />
+
+</RelativeLayout>
+>>>>>>> dc38714c9d317245d579df8d4f4b8d4254b2dd43

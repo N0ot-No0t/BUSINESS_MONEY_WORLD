@@ -3,8 +3,7 @@ package com.patateco.qc.ca.businessmoneyworld;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.widget.EditText;
-import android.widget.TextView;
+
 
 /**
  * Created by Noot on 13/03/2018.
@@ -21,6 +20,7 @@ public class MenuPersonnage extends Activity {
         setContentView(R.layout.pop_pers);
 
 
+
         DisplayMetrics dm = new DisplayMetrics();
 
         getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -31,12 +31,7 @@ public class MenuPersonnage extends Activity {
 
         getWindow().setLayout((int)(width*.8),(int)(height*.6));
 
-        TextView textView = (TextView) findViewById(R.id.enterName);
-        textView.setText("Enter your name : ");
 
-        EditText inputText = (EditText) findViewById(R.id.persName);
-
-String name = inputText.getText().toString();
 
 
 
