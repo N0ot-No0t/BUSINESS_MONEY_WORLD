@@ -3,6 +3,7 @@ package com.patateco.qc.ca.businessmoneyworld;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -30,9 +31,12 @@ public class MenuPersonnage extends Activity {
 
         getWindow().setLayout((int)(width*.8),(int)(height*.6));
 
-        TextView textView = (TextView) findViewById(R.id.persName);
-        textView.setText("Test from a variable");
+        TextView textView = (TextView) findViewById(R.id.enterName);
+        textView.setText("Enter your name : ");
 
+        EditText inputText = (EditText) findViewById(R.id.persName);
+
+String name = inputText.getText().toString();
 
 
 
