@@ -30,7 +30,7 @@ public class MenuPersonnage extends Activity {
 
         getWindow().setLayout((int)(width*.8),(int)(height*.6));
 
-        TextView textView = (TextView) findViewById(R.id.textView3);
+        TextView textView = (TextView) findViewById(R.id.persName);
         textView.setText("Test from a variable");
 
 
