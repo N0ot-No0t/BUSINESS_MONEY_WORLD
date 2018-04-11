@@ -1,7 +1,6 @@
 package com.patateco.qc.ca.businessmoneyworld;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -15,39 +14,33 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * Created by Noot on 27/03/2018.
+ * Created by Lim on 2018-04-10.
  */
 
-public class MenuAction extends Activity {
+public class MenuMatierePremiere extends Activity {
 
-    int[] photo = {R.drawable.hammer, R.drawable.stock, R.drawable.minerals};
+    int[] photoMatiere = {R.drawable.oil, R.drawable.iron, R.drawable.coppertube,R.drawable.wood,R.drawable.rubber,R.drawable.aluminium,
+            R.drawable.goldbrick, R.drawable.zinc,R.drawable.tungstene,R.drawable.silver,R.drawable.lithiums};
 
-    String[] noms = {"Matière première","StockMarket","Minéraux"};
-    Drawable drawable;
+    String[] nomMatiere = {"Pétrole","Fer","Cuivre","Bois","Caoutchouc","Aluminium","Or","Zinc","Tungstène","Argent","Lithium"};
 
-    @Override
+
+
+        @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pop_action);
+        setContentView(R.layout.pop_matierepremiere);
 
-        ListView listAction = (ListView)findViewById(R.id.listAction);
-        CustomAdapter customAdapterA = new CustomAdapter();
-        listAction.setAdapter(customAdapterA);
-        listAction.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ListView listMatiere = (ListView)findViewById(R.id.listMatierepremiere);
+        CustomAdapter customAdapterMatiere = new CustomAdapter();
+        listMatiere.setAdapter(customAdapterMatiere);
+        listMatiere.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                int imageId = photo[position];
+                int imageId = photoMatiere[position];
                 Drawable drawable = getResources().getDrawable(imageId);
-                if(imageId == R.drawable.hammer){
-                    startActivity(new Intent(MenuAction.this,MenuMatierePremiere.class));
-                }
-                if(imageId == R.drawable.stock){
-                    startActivity(new Intent(MenuAction.this,MenuStockMarket.class));
-                }
-                if(imageId == R.drawable.minerals){
-                    startActivity(new Intent(MenuAction.this,MenuMineraux.class));
-                }
+
 
             }
         });
@@ -72,7 +65,7 @@ public class MenuAction extends Activity {
 
         @Override
         public int getCount() {
-            return photo.length;
+            return photoMatiere.length;
         }
 
         @Override
@@ -92,10 +85,15 @@ public class MenuAction extends Activity {
             ImageView img = (ImageView)view.findViewById(R.id.img);
             TextView nom = (TextView)view.findViewById(R.id.nom);
 
-            img.setImageResource(photo[i]);
-            nom.setText(noms[i]);
+            img.setImageResource(photoMatiere[i]);
+            nom.setText(nomMatiere[i]);
 
             return view;
         }
     }
-}
+
+    }
+
+
+
+

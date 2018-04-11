@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.patateco.qc.ca.businessmoneyworld" >
-<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,7 +21,14 @@
                   ></activity>
         <activity android:name=".MenuPays"
             ></activity>
-
+        <activity android:name=".MenuAction"
+            ></activity>
+        <activity android:name=".MenuMatierePremiere"
+            ></activity>
+        <activity android:name=".MenuMineraux"
+            ></activity>
+        <activity android:name=".MenuStockMarket"
+            ></activity>
     </application>
 
 </manifest>
