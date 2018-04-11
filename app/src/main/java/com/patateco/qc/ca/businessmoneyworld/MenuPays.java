@@ -5,12 +5,10 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by Noot on 27/03/2018.
@@ -18,7 +16,7 @@ import android.widget.Toast;
 
 public class MenuPays extends Activity {
     int[] IMAGES = {R.drawable.icon_argentina,R.drawable.icon_australia,R.drawable.icon_brazil,R.drawable.canada_icon, R.drawable.icon_china, R.drawable.icon_colombia,R.drawable.icon_cuba,R.drawable.icon_drc,
-    R.drawable.icon_france,R.drawable.icon_germany,R.drawable.icon_india,R.drawable.icon_iran,R.drawable.icon_italie,R.drawable.icon_japan,
+            R.drawable.icon_france,R.drawable.icon_germany,R.drawable.icon_india,R.drawable.icon_iran,R.drawable.icon_italie,R.drawable.icon_japan,
             R.drawable.icon_mexico,R.drawable.icon_morroco,R.drawable.icon_norway,R.drawable.icon_rsa,R.drawable.icon_russia,
             R.drawable.icon_saudia_arabia,R.drawable.icon_spain,R.drawable.icon_sweden,R.drawable.icon_uk,R.drawable.icon_usa};
 
@@ -33,12 +31,6 @@ public class MenuPays extends Activity {
         ListView listpays = (ListView)findViewById(R.id.listpays);
         CustomAdapter customAdapter = new CustomAdapter();
         listpays.setAdapter(customAdapter);
-        listpays.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Toast.makeText(MenuPays.this,NAMES[position],Toast.LENGTH_SHORT).show();
-            }
-        });
 
 //        DisplayMetrics dm = new DisplayMetrics();
 //
@@ -73,11 +65,11 @@ public class MenuPays extends Activity {
         public View getView(int i, View view, ViewGroup viewGroup) {
 
             view = getLayoutInflater().inflate(R.layout.custom_layout,null);
-            ImageView img = (ImageView)view.findViewById(R.id.img);
-            TextView nom = (TextView)view.findViewById(R.id.nom);
+            ImageView imgPays = (ImageView)view.findViewById(R.id.imgPays);
+            TextView nomPays = (TextView)view.findViewById(R.id.nomPays);
 
-            img.setImageResource(IMAGES[i]);
-            nom.setText(NAMES[i]);
+            imgPays.setImageResource(IMAGES[i]);
+            nomPays.setText(NAMES[i]);
 
             return view;
         }
