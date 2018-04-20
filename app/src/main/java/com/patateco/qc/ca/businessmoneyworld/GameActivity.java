@@ -52,7 +52,7 @@ public class GameActivity extends AppCompatActivity {
 
           //final TextView txtTest = (TextView)findViewById(R.id.txtTest);
 
-          imageView =(ImageView) this.findViewById(R.id.imgPays);
+          imageView =(ImageView) this.findViewById(R.id.img);
 
         ImageButton btnSettings = (ImageButton) this.findViewById(R.id.btnSettings);
         btnSettings.setOnClickListener(new View.OnClickListener() {
@@ -131,7 +131,7 @@ public class GameActivity extends AppCompatActivity {
 
     public ImageButton creerListener(int btn){
 
-        ImageButton imgBtn = (ImageButton) this.findViewById(R.id.nomPays);
+        ImageButton imgBtn = (ImageButton) this.findViewById(R.id.nom);
 
         imgBtn.setOnClickListener(new View.OnClickListener() {
             @Override

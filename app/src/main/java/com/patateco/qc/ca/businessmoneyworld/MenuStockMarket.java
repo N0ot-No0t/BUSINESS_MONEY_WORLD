@@ -21,7 +21,7 @@ public class MenuStockMarket extends Activity {
     int[] photoStock = {R.drawable.microsoft, R.drawable.apple, R.drawable.cocacola, R.drawable.amazon,R.drawable.facebook, R.drawable.exxonmobil, R.drawable.intel, R.drawable.bankofamerica,
             R.drawable.ibm, R.drawable.ford, R.drawable.google, R.drawable.walmart,R.drawable.nike};
 
-    String[] nomStock = {"Microsoft","Apple","Coca Cola","Amazono","Facebook","Exxon Mobil","Intel","Bank Of America","IBM",
+    String[] nomStock = {"Microsoft","Apple","Coca Cola","Amazon","Facebook","Exxon Mobil","Intel","Bank Of America","IBM",
             "Ford","Google","Walmart","Nike"};
 
     @Override

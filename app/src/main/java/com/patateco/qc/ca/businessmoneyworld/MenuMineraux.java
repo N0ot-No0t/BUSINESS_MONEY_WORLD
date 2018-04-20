@@ -19,7 +19,7 @@ import android.widget.TextView;
 public class MenuMineraux extends Activity {
     int[] photoMineraux = {R.drawable.diamond, R.drawable.ruby, R.drawable.emerald, R.drawable.amethyst};
 
-    String[] nomMineraux = {"Diamand","Ruby","Emeraude","Amethyste"};
+    String[] nomMineraux = {"Diamant","Rubis","Emeraude","Amethyste"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,11 +77,11 @@ public class MenuMineraux extends Activity {
         public View getView(int i, View view, ViewGroup viewGroup) {
 
             view = getLayoutInflater().inflate(R.layout.custom_layout,null);
-            ImageView img = (ImageView)view.findViewById(R.id.img);
-            TextView nom = (TextView)view.findViewById(R.id.nom);
+            //ImageView img = (ImageView)view.findViewById(R.id.img);
+            //TextView nom = (TextView)view.findViewById(R.id.nom);
 
-            img.setImageResource(photoMineraux[i]);
-            nom.setText(nomMineraux[i]);
+           // img.setImageResource(photoMineraux[i]);
+            //nom.setText(nomMineraux[i]);
 
             return view;
         }
