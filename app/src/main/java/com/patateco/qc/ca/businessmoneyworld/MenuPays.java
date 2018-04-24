@@ -29,49 +29,10 @@ public class MenuPays extends Activity {
         setContentView(R.layout.pop_pays);
 
         ListView listpays = (ListView)findViewById(R.id.listpays);
-        CustomAdapter customAdapter = new CustomAdapter();
-        listpays.setAdapter(customAdapter);
+        MyAdapter myAdapter = new MyAdapter(MenuPays.this, NAMES,IMAGES);
+        listpays.setAdapter(myAdapter);
 
-//        DisplayMetrics dm = new DisplayMetrics();
-//
-//        getWindowManager().getDefaultDisplay().getMetrics(dm);
-//
-//        int width = dm.widthPixels;
-//
-//        int height = dm.heightPixels;
-//
-//        getWindow().setLayout((int)(width*1),(int)(height*.8));
 
     }
 
-    class CustomAdapter extends BaseAdapter{
-
-        @Override
-        public int getCount() {
-            return IMAGES.length;
-        }
-
-        @Override
-        public Object getItem(int i) {
-            return null;
-        }
-
-        @Override
-        public long getItemId(int i) {
-            return 0;
-        }
-
-        @Override
-        public View getView(int i, View view, ViewGroup viewGroup) {
-
-            view = getLayoutInflater().inflate(R.layout.custom_layout,null);
-            ImageView imgPays = (ImageView)view.findViewById(R.id.img);
-            TextView nomPays = (TextView)view.findViewById(R.id.nom);
-
-            imgPays.setImageResource(IMAGES[i]);
-            nomPays.setText(NAMES[i]);
-
-            return view;
-        }
-    }
 }

@@ -40,8 +40,8 @@ public class MenuMatierePremiere extends Activity {
 
 
         ListView listMatiere = (ListView)findViewById(R.id.listMatierepremiere);
-        CustomAdapter customAdapterMatiere = new CustomAdapter();
-        listMatiere.setAdapter(customAdapterMatiere);
+        MyAdapter myAdapter = new MyAdapter(MenuMatierePremiere.this,nomMatiere,photoMatiere);
+        listMatiere.setAdapter(myAdapter);
         listMatiere.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
@@ -79,50 +79,9 @@ public class MenuMatierePremiere extends Activity {
         });
 
 
-        DisplayMetrics dm = new DisplayMetrics();
-
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-
-        int width = dm.widthPixels;
-
-        int height = dm.heightPixels;
-
-        getWindow().setLayout((int)(width*.8),(int)(height*.6));
 
 
 
-
-
-    }
-    class CustomAdapter extends BaseAdapter {
-
-        @Override
-        public int getCount() {
-            return photoMatiere.length;
-        }
-
-        @Override
-        public Object getItem(int i) {
-            return null;
-        }
-
-        @Override
-        public long getItemId(int i) {
-            return 0;
-        }
-
-        @Override
-        public View getView(int i, View view, ViewGroup viewGroup) {
-
-            view = getLayoutInflater().inflate(R.layout.custom_layout,null);
-            ImageView img = (ImageView)view.findViewById(R.id.img);
-            TextView nom = (TextView)view.findViewById(R.id.nom);
-
-            img.setImageResource(photoMatiere[i]);
-            nom.setText(nomMatiere[i]);
-
-            return view;
-        }
     }
 
     }
