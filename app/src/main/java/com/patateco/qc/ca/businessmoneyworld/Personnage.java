@@ -9,15 +9,19 @@ public class Personnage {
     int age;
     double creditScore;
     double currentCash;
-    double stocks;
 
-    public Personnage(String name,int age, double creditScore,double currentCash,double stocks){
+
+    public Personnage(String name,int age, double creditScore,double currentCash){
         this.name = name;
         this.age = age;
         this.creditScore = creditScore;
         this.currentCash = currentCash;
-        this.stocks = stocks;
 
+
+    }
+
+    public double getCash(){
+        return currentCash;
     }
 
 }

@@ -27,8 +27,11 @@ public class GameActivity extends AppCompatActivity {
 
     private ImageView imageView;
     private Button getImage;
-
+    Personnage joueur = new Personnage("Joe",18,1,1000);
     private Bitmap bitmap;
+
+    ArrayList<Integer> imageInventaire = new ArrayList<Integer>();
+    ArrayList<String> nomImage = new ArrayList<String>();
 
     ArrayList<ImageButton> listeBtnPays = new ArrayList<>();
 
@@ -40,11 +43,12 @@ public class GameActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_game);
 
-        for (int i = 0; i < 25;i++){
+        double argent = joueur.getCash();
+        TextView montant = (TextView)findViewById(R.id.montant);
+        montant.setText(String.valueOf(argent));
 
-            //listeBtnPays.get(i) = new ImageButton();
 
-        }
+
 
         Bitmap bitmap = null;
 
@@ -68,7 +72,16 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(GameActivity.this,MenuPersonnage.class));
+                imageInventaire.add(R.drawable.aluminium);
+                nomImage.add("aluminium");
+                Intent intent = new Intent(GameActivity.this, MenuPersonnage.class);
+                Bundle bundle = new Bundle();
+                Bundle bundle1 = new Bundle();
+                bundle.putSerializable("listImage",imageInventaire);
+                bundle1.putSerializable("listNom",nomImage);
+                intent.putExtras(bundle);
+                intent.putExtras(bundle1);
+                startActivity(intent);
             }
         });
 
@@ -84,9 +97,14 @@ public class GameActivity extends AppCompatActivity {
         btnAction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                startActivity(new Intent(GameActivity.this,MenuAction.class));
-
+                Intent intent = new Intent(GameActivity.this, MenuAction.class);
+                Bundle bundle = new Bundle();
+                Bundle bundle1 = new Bundle();
+                bundle.putSerializable("listImage",imageInventaire);
+                bundle1.putSerializable("listNom",nomImage);
+                intent.putExtras(bundle);
+                intent.putExtras(bundle1);
+                startActivity(intent);
             }
         });
 
@@ -145,4 +163,5 @@ public class GameActivity extends AppCompatActivity {
         return imgBtn;
 
     }
+
 }

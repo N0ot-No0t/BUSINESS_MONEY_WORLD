@@ -1,12 +1,10 @@
 package com.patateco.qc.ca.businessmoneyworld;
 
 import android.app.Activity;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -23,18 +21,57 @@ public class MenuPays extends Activity {
             R.drawable.icon_saudia_arabia,R.drawable.icon_spain,R.drawable.icon_sweden,R.drawable.icon_uk,R.drawable.icon_usa};
 
     String[] NAMES = {"ARGENTINA","AUSTRALIA","BRAZIL","CANADA","CHINA","COLOMBIA","CUBA","DEMOCRATIC REPUBLIC OF CONGO","FRANCE","GERMANY","INDIA","IRAN",
-            "ITALY","JAPAN","MEXICO","MORROCO","NORWAY","SOUTH AFRICA","RUSSIA","SAUDI ARABIA","SPAIN","SWEDEN","UNITED KINGDOM", "UNITED STATES OF AMERICA"};
+            "ITALY","JAPAN","MEXICO","MORROCO","NORWAY","SOUTH AFRICA","SAUDIA ARABIA","SPAIN","SWEDEN","UNITED KINGDOM","UNITED STATES OF AMERICA"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pop_pays);
 
-        final ListView listpays = (ListView)findViewById(R.id.listpays);
+        ListView listpays = (ListView)findViewById(R.id.listpays);
+        CustomAdapter customAdapter = new CustomAdapter();
+        listpays.setAdapter(customAdapter);
 
-        MyAdapter myAdapter = new MyAdapter(MenuPays.this,NAMES,IMAGES);
+//        DisplayMetrics dm = new DisplayMetrics();
+//
+//        getWindowManager().getDefaultDisplay().getMetrics(dm);
+//
+//        int width = dm.widthPixels;
+//
+//        int height = dm.heightPixels;
+//
+//        getWindow().setLayout((int)(width*1),(int)(height*.8));
 
-        listpays.setAdapter(myAdapter);
     }
 
+    class CustomAdapter extends BaseAdapter{
+
+        @Override
+        public int getCount() {
+            return IMAGES.length;
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+
+            view = getLayoutInflater().inflate(R.layout.custom_layout,null);
+            ImageView imgPays = (ImageView)view.findViewById(R.id.img);
+            TextView nomPays = (TextView)view.findViewById(R.id.nom);
+
+            imgPays.setImageResource(IMAGES[i]);
+            nomPays.setText(NAMES[i]);
+
+            return view;
+        }
+    }
 }

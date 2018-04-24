@@ -1,52 +1,45 @@
 package com.patateco.qc.ca.businessmoneyworld;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.RemoteViews;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 /**
- * Created by Lim on 2018-04-10.
+ * Created by Lim on 2018-04-17.
  */
 
-public class MenuMineraux extends Activity {
-    int[] photoMineraux = {R.drawable.diamond, R.drawable.ruby, R.drawable.emerald, R.drawable.amethyst};
 
-    String[] nomMineraux = {"Diamand","Ruby","Emeraude","Amethyste"};
-    ArrayList<Integer> imageInventaire;
-    ArrayList<String> nomImage;
+public class MenuInventaire extends Activity {
+      ArrayList<Integer> imageInventaire;
+      ArrayList<String> nomImage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pop_mineraux);
+        setContentView(R.layout.pop_inventaire);
+
         Bundle bundleImage = getIntent().getExtras();
         imageInventaire = (ArrayList<Integer>)bundleImage.getSerializable("listImage");
         nomImage = (ArrayList<String>)bundleImage.getSerializable("listNom");
 
 
-
-        ListView listMineraux = (ListView)findViewById(R.id.listmineraux);
-        CustomAdapter customAdapterMineraux = new CustomAdapter();
-        listMineraux.setAdapter(customAdapterMineraux);
-        listMineraux.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ListView listInventaire = (ListView)findViewById(R.id.listInventaire);
+        CustomAdapter customAdapterMatiere = new CustomAdapter();
+        listInventaire.setAdapter(customAdapterMatiere);
+        listInventaire.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                int imageId = photoMineraux[position];
-                Drawable drawable = getResources().getDrawable(imageId);
             }
         });
 
@@ -70,7 +63,7 @@ public class MenuMineraux extends Activity {
 
         @Override
         public int getCount() {
-            return photoMineraux.length;
+            return imageInventaire.size();
         }
 
         @Override
@@ -86,13 +79,12 @@ public class MenuMineraux extends Activity {
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
 
-            view = getLayoutInflater().inflate(R.layout.custom_layout,null);
-            ImageView img = (ImageView)view.findViewById(R.id.img);
-            TextView nom = (TextView)view.findViewById(R.id.nom);
+            view = getLayoutInflater().inflate(R.layout.custom_layout_inventaire,null);
+            ImageView img = (ImageView)view.findViewById(R.id.imgInventaire);
+            TextView nom = (TextView)view.findViewById(R.id.nomInventaire);
 
-
-            img.setImageResource(photoMineraux[i]);
-            nom.setText(nomMineraux[i]);
+            img.setImageResource(imageInventaire.get(i));
+            nom.setText(nomImage.get(i));
 
             return view;
         }
