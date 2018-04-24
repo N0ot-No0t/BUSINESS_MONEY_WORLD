@@ -23,7 +23,7 @@ public class MenuPays extends Activity {
             R.drawable.icon_saudia_arabia,R.drawable.icon_spain,R.drawable.icon_sweden,R.drawable.icon_uk,R.drawable.icon_usa};
 
     String[] NAMES = {"ARGENTINA","AUSTRALIA","BRAZIL","CANADA","CHINA","COLOMBIA","CUBA","DEMOCRATIC REPUBLIC OF CONGO","FRANCE","GERMANY","INDIA","IRAN",
-            "ITALY","JAPAN","MEXICO","MORROCO","NORWAY","SOUTH AFRICA","SAUDIA ARABIA","SPAIN","SWEDEN","UNITED KINGDOM","UNITED STATES OF AMERICA"};
+            "ITALY","JAPAN","MEXICO","MORROCO","NORWAY","SOUTH AFRICA","RUSSIA","SAUDI ARABIA","SPAIN","SWEDEN","UNITED KINGDOM", "UNITED STATES OF AMERICA"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

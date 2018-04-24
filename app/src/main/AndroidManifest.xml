@@ -21,7 +21,18 @@
                   ></activity>
         <activity android:name=".MenuPays"
             ></activity>
-
+        <activity android:name=".MenuAction"
+            ></activity>
+        <activity android:name=".MenuStockMarket"
+            ></activity>
+        <activity android:name=".MenuMineraux"
+            ></activity>
+        <activity android:name=".MenuMatierePremiere"
+            ></activity>
+        <activity android:name=".MenuAchat"
+            ></activity>
+        <activity android:name=".MenuInventaire"
+            ></activity>
     </application>
 
 </manifest>
