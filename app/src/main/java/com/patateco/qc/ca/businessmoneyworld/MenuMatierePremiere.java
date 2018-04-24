@@ -28,15 +28,6 @@ public class MenuMatierePremiere extends Activity {
 
         @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.pop_matierepremiere);
-//
-//        ListView listMatiere = (ListView)findViewById(R.id.listMatierepremiere);
-//        CustomAdapter customAdapterMatiere = new CustomAdapter();
-//        listMatiere.setAdapter(customAdapterMatiere);
-
-
-
 
             super.onCreate(savedInstanceState);
 
@@ -56,20 +47,6 @@ public class MenuMatierePremiere extends Activity {
 
             }
         });
-
-
-//        DisplayMetrics dm = new DisplayMetrics();
-//
-//        getWindowManager().getDefaultDisplay().getMetrics(dm);
-//
-//        int width = dm.widthPixels;
-//
-//        int height = dm.heightPixels;
-//
-//        getWindow().setLayout((int)(width*.8),(int)(height*.6));
-
-
-
 
 
         }
