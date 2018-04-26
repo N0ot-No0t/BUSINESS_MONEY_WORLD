@@ -44,6 +44,8 @@ public class MenuMatierePremiere extends Activity {
 
             System.out.println("CC in MMP "+selectedCountryCode);
 
+            //______________________________________________________________________________________
+
 
             switch(selectedCountryCode){
 
@@ -52,17 +54,28 @@ public class MenuMatierePremiere extends Activity {
 
                     nomMatiere = new String[] {"Pétrole","Fer","Cuivre","Bois"};
                     break;
+                case R.drawable.icon_usa:
+                    photoMatiere = new int[] {R.drawable.oil};
+
+                    nomMatiere = new String[] {"Pétrole"};
+                    break;
+
+                case R.drawable.canada_icon:
+                    photoMatiere = new int[] {R.drawable.wood};
+
+                    nomMatiere = new String[] {"Bois"};
+                    break;
+
                 default:
 
-                    photoMatiere = new int[] {R.drawable.oil, R.drawable.iron, R.drawable.coppertube,R.drawable.wood,R.drawable.rubber,R.drawable.aluminium,
-                            R.drawable.goldbrick, R.drawable.zinc,R.drawable.tungstene,R.drawable.silver,R.drawable.lithiums};
+                    photoMatiere = new int[] {};
 
-                    nomMatiere = new String[] {"Pétrole","Fer","Cuivre","Bois","Caoutchouc","Aluminium","Or","Zinc","Tungstène","Argent","Lithium"};
+                    nomMatiere = new String[] {};
 
                     break;
 
             }
-
+            //______________________________________________________________________________________
 
             imageInventaire = (ArrayList<Integer>)bundleImage.getSerializable("listImage");
             nomImage = (ArrayList<String>)bundleImage.getSerializable("listNom");
@@ -77,7 +90,6 @@ public class MenuMatierePremiere extends Activity {
 
                 int imageId = photoMatiere[position];
                 Drawable drawable = getResources().getDrawable(imageId);
-                //__________________________________________________________________________________
 
 
 
@@ -95,7 +107,8 @@ public class MenuMatierePremiere extends Activity {
 
 
 
-                //__________________________________________________________________________________
+
+
 
 
                 String matiere="";

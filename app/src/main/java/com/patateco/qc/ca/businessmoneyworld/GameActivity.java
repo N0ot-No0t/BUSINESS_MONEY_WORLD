@@ -27,10 +27,13 @@ public class GameActivity extends AppCompatActivity {
 
     private ImageView imageView;
     private Button getImage;
-    Personnage joueur = new Personnage("Joe",18,1,1000);
+    Personnage joueur = new Personnage("Joe", 18, 1, 1000);
     private Bitmap bitmap;
     private ImageView selectedCountry;
-    protected int selectedCountryCode;
+    protected int selectedCountryCode = 0;
+    protected int selectedOtherCountryCode = 0;
+    boolean selected = false;
+    boolean otherCountrySelected = false;
 
     ArrayList<Integer> imageInventaire = new ArrayList<Integer>();
     ArrayList<String> nomImage = new ArrayList<String>();
@@ -41,24 +44,22 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_game);
 
         double argent = joueur.getCash();
-        TextView montant = (TextView)findViewById(R.id.montant);
+        TextView montant = (TextView) findViewById(R.id.montant);
         montant.setText(String.valueOf(argent));
-
-
 
 
         Bitmap bitmap = null;
 
         //imageView.setImageBitmap(bitmap);
 
-          //final TextView txtTest = (TextView)findViewById(R.id.txtTest);
+        //final TextView txtTest = (TextView)findViewById(R.id.txtTest);
 
-          imageView =(ImageView) this.findViewById(R.id.img);
+        imageView = (ImageView) this.findViewById(R.id.img);
 
         ImageButton btnSettings = (ImageButton) this.findViewById(R.id.btnSettings);
         btnSettings.setOnClickListener(new View.OnClickListener() {
@@ -79,8 +80,8 @@ public class GameActivity extends AppCompatActivity {
                 Intent intent = new Intent(GameActivity.this, MenuPersonnage.class);
                 Bundle bundle = new Bundle();
                 Bundle bundle1 = new Bundle();
-                bundle.putSerializable("listImage",imageInventaire);
-                bundle1.putSerializable("listNom",nomImage);
+                bundle.putSerializable("listImage", imageInventaire);
+                bundle1.putSerializable("listNom", nomImage);
                 intent.putExtras(bundle);
                 intent.putExtras(bundle1);
                 startActivity(intent);
@@ -102,12 +103,12 @@ public class GameActivity extends AppCompatActivity {
                 Intent intent = new Intent(GameActivity.this, MenuAction.class);
                 Bundle bundle = new Bundle();
                 Bundle bundle1 = new Bundle();
-                bundle.putSerializable("listImage",imageInventaire);
-                bundle1.putSerializable("listNom",nomImage);
+                bundle.putSerializable("listImage", imageInventaire);
+                bundle1.putSerializable("listNom", nomImage);
                 intent.putExtras(bundle);
                 intent.putExtras(bundle1);
-                System.out.println("CC in GA "+selectedCountryCode);
-                intent.putExtra("selectedCountry",selectedCountryCode);
+                System.out.println("CC in GA " + selectedCountryCode);
+                intent.putExtra("selectedCountry", selectedCountryCode);
                 startActivity(intent);
             }
         });
@@ -117,7 +118,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(GameActivity.this,MenuPays.class));
+                startActivity(new Intent(GameActivity.this, MenuPays.class));
             }
         });
 
@@ -131,7 +132,6 @@ public class GameActivity extends AppCompatActivity {
         });
 
 
-
         selectedCountry = (ImageView) this.findViewById(R.id.selectedCountry);
 
 
@@ -140,10 +140,36 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_argentina);
-                selectedCountryCode = R.drawable.icon_argentina;
+                selectedOtherCountryCode = R.drawable.icon_argentina;
 
-                System.out.println("CC in GA "+selectedCountryCode);
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_argentina);
+                    selectedCountryCode = R.drawable.icon_argentina;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+
+                System.out.println("CC in GA " + selectedCountryCode);
 
             }
         });
@@ -154,8 +180,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_australia);
-                selectedCountryCode = R.drawable.icon_australia;
+                selectedOtherCountryCode = R.drawable.icon_australia;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_australia);
+                    selectedCountryCode = R.drawable.icon_australia;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -165,8 +216,35 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_brazil);
-                selectedCountryCode = R.drawable.icon_brazil;
+                selectedOtherCountryCode = R.drawable.icon_brazil;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_brazil);
+                    selectedCountryCode = R.drawable.icon_brazil;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+
             }
         });
 
@@ -175,8 +253,34 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.canada_icon);
-                selectedCountryCode = R.drawable.canada_icon;
+                selectedOtherCountryCode = R.drawable.canada_icon;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.canada_icon);
+                    selectedCountryCode = R.drawable.canada_icon;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
 
             }
         });
@@ -186,8 +290,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_china);
-                selectedCountryCode = R.drawable.icon_china;
+                selectedOtherCountryCode = R.drawable.icon_china;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_china);
+                    selectedCountryCode = R.drawable.icon_china;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -197,8 +326,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_colombia);
-                selectedCountryCode = R.drawable.icon_colombia;
+                selectedOtherCountryCode = R.drawable.icon_colombia;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_colombia);
+                    selectedCountryCode = R.drawable.icon_colombia;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -208,8 +362,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_cuba);
-                selectedCountryCode = R.drawable.icon_cuba;
+                selectedOtherCountryCode = R.drawable.icon_cuba;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_cuba);
+                    selectedCountryCode = R.drawable.icon_cuba;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -220,8 +399,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_drc);
-                selectedCountryCode = R.drawable.icon_drc;
+                selectedOtherCountryCode = R.drawable.icon_drc;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_drc);
+                    selectedCountryCode = R.drawable.icon_drc;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -231,8 +435,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_france);
-                selectedCountryCode = R.drawable.icon_france;
+                selectedOtherCountryCode = R.drawable.icon_france;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_france);
+                    selectedCountryCode = R.drawable.icon_france;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -243,8 +472,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_germany);
-                selectedCountryCode = R.drawable.icon_germany;
+                selectedOtherCountryCode = R.drawable.icon_germany;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_germany);
+                    selectedCountryCode = R.drawable.icon_germany;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -254,8 +508,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_india);
-                selectedCountryCode = R.drawable.icon_india;
+                selectedOtherCountryCode = R.drawable.icon_india;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_india);
+                    selectedCountryCode = R.drawable.icon_india;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -265,8 +544,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_iran);
-                selectedCountryCode = R.drawable.icon_iran;
+                selectedOtherCountryCode = R.drawable.icon_iran;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_iran);
+                    selectedCountryCode = R.drawable.icon_iran;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -276,8 +580,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_italie);
-                selectedCountryCode = R.drawable.icon_italie;
+                selectedOtherCountryCode = R.drawable.icon_iran;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_iran);
+                    selectedCountryCode = R.drawable.icon_iran;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -287,8 +616,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_japan);
-                selectedCountryCode = R.drawable.icon_japan;
+                selectedOtherCountryCode = R.drawable.icon_japan;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_japan);
+                    selectedCountryCode = R.drawable.icon_japan;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -298,8 +652,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_mexico);
-                selectedCountryCode = R.drawable.icon_mexico;
+                selectedOtherCountryCode = R.drawable.icon_mexico;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_mexico);
+                    selectedCountryCode = R.drawable.icon_mexico;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -309,8 +688,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_morroco);
-                selectedCountryCode = R.drawable.icon_morroco;
+                selectedOtherCountryCode = R.drawable.icon_morroco;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_morroco);
+                    selectedCountryCode = R.drawable.icon_morroco;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -320,8 +724,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_norway);
-                selectedCountryCode = R.drawable.icon_norway;
+                selectedOtherCountryCode = R.drawable.icon_norway;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_norway);
+                    selectedCountryCode = R.drawable.icon_norway;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -331,8 +760,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_rsa);
-                selectedCountryCode = R.drawable.icon_rsa;
+                selectedOtherCountryCode = R.drawable.icon_rsa;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_rsa);
+                    selectedCountryCode = R.drawable.icon_rsa;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -342,8 +796,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_russia);
-                selectedCountryCode = R.drawable.icon_russia;
+                selectedOtherCountryCode = R.drawable.icon_russia;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_russia);
+                    selectedCountryCode = R.drawable.icon_russia;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -353,8 +832,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_saudia_arabia);
-                selectedCountryCode = R.drawable.icon_saudia_arabia;
+                selectedOtherCountryCode = R.drawable.icon_saudia_arabia;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_saudia_arabia);
+                    selectedCountryCode = R.drawable.icon_saudia_arabia;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -364,8 +868,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_spain);
-                selectedCountryCode = R.drawable.icon_spain;
+                selectedOtherCountryCode = R.drawable.icon_spain;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_spain);
+                    selectedCountryCode = R.drawable.icon_spain;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -375,8 +904,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_sweden);
-                selectedCountryCode = R.drawable.icon_sweden;
+                selectedOtherCountryCode = R.drawable.icon_sweden;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_sweden);
+                    selectedCountryCode = R.drawable.icon_sweden;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -386,8 +940,33 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_uk);
-                selectedCountryCode = R.drawable.icon_uk;
+                selectedOtherCountryCode = R.drawable.icon_uk;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_uk);
+                    selectedCountryCode = R.drawable.icon_uk;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
@@ -397,12 +976,36 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedCountry.setImageResource(R.drawable.icon_usa);
-                selectedCountryCode = R.drawable.icon_usa;
+                selectedOtherCountryCode = R.drawable.icon_usa;
+
+                if(selectedCountryCode == 0) {
+                    selectedCountry.setImageResource(R.drawable.icon_usa);
+                    selectedCountryCode = R.drawable.icon_usa;
+                }
+
+                else if(selectedCountryCode == selectedOtherCountryCode){
+
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
+
+                else if(selectedCountryCode != 0){
+
+                    selectedCountryCode = selectedOtherCountryCode;
+                    selectedCountry.setImageResource(selectedOtherCountryCode);
+
+
+                }
+
+                else {
+                    selectedCountry.setImageResource(R.drawable.white);
+                    selectedCountryCode = 0;
+
+                }
 
             }
         });
-
 
 
     }
