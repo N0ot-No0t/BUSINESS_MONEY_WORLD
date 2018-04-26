@@ -28,15 +28,24 @@ public class MenuAction extends Activity {
 
     ArrayList<Integer> imageInventaire;
     ArrayList<String> nomImage;
+    protected int selectedCountryCode;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pop_action);
 
-        Bundle bundleImage = getIntent().getExtras();
+        final Bundle bundleImage = getIntent().getExtras();
+
         imageInventaire = (ArrayList<Integer>)bundleImage.getSerializable("listImage");
         nomImage = (ArrayList<String>)bundleImage.getSerializable("listNom");
+
+
+
 
         ListView listAction = (ListView)findViewById(R.id.listAction);
         MyAdapter myAdapter = new MyAdapter(MenuAction.this,noms,photo);
@@ -47,35 +56,46 @@ public class MenuAction extends Activity {
 
                 int imageId = photo[position];
                 Drawable drawable = getResources().getDrawable(imageId);
-                if(imageId == R.drawable.hammer){
-                    Intent intent = new Intent(MenuAction.this,MenuMatierePremiere.class);
-                    Bundle bundle = new Bundle();
-                    Bundle bundle1 = new Bundle();
-                    bundle.putSerializable("listImage",imageInventaire);
-                    bundle1.putSerializable("listNom",nomImage);
-                    intent.putExtras(bundle);
-                    intent.putExtras(bundle1);
-                    startActivity(intent);
-                }
-                if(imageId == R.drawable.stock){
-                    Intent intent = new Intent(MenuAction.this, MenuStockMarket.class);
-                    Bundle bundle = new Bundle();
-                    Bundle bundle1 = new Bundle();
-                    bundle.putSerializable("listImage",imageInventaire);
-                    bundle1.putSerializable("listNom",nomImage);
-                    intent.putExtras(bundle);
-                    intent.putExtras(bundle1);
-                    startActivity(intent);
-                }
-                if(imageId == R.drawable.minerals){
-                    Intent intent = new Intent(MenuAction.this, MenuMineraux.class);
-                    Bundle bundle = new Bundle();
-                    Bundle bundle1 = new Bundle();
-                    bundle.putSerializable("listImage",imageInventaire);
-                    bundle1.putSerializable("listNom",nomImage);
-                    intent.putExtras(bundle);
-                    intent.putExtras(bundle1);
-                    startActivity(intent);
+                switch (imageId) {
+                    case R.drawable.hammer: {
+                        Intent intent = new Intent(MenuAction.this, MenuMatierePremiere.class);
+                        Bundle bundle = new Bundle();
+                        Bundle bundle1 = new Bundle();
+                        bundle.putSerializable("listImage", imageInventaire);
+                        bundle1.putSerializable("listNom", nomImage);
+                        intent.putExtras(bundle);
+                        intent.putExtras(bundle1);
+                        MenuMatierePremiere menuMatierePremiere = new MenuMatierePremiere();
+
+                        selectedCountryCode = bundleImage.getInt("selectedCountry");
+                        intent.putExtra("selectedCountry",selectedCountryCode);
+                        System.out.println("CC in MA "+selectedCountryCode);
+
+                        startActivity(intent);
+                        break;
+                    }
+                    case R.drawable.stock: {
+                        Intent intent = new Intent(MenuAction.this, MenuStockMarket.class);
+                        Bundle bundle = new Bundle();
+                        Bundle bundle1 = new Bundle();
+                        bundle.putSerializable("listImage", imageInventaire);
+                        bundle1.putSerializable("listNom", nomImage);
+                        intent.putExtras(bundle);
+                        intent.putExtras(bundle1);
+                        startActivity(intent);
+                        break;
+                    }
+                    case R.drawable.minerals: {
+                        Intent intent = new Intent(MenuAction.this, MenuMineraux.class);
+                        Bundle bundle = new Bundle();
+                        Bundle bundle1 = new Bundle();
+                        bundle.putSerializable("listImage", imageInventaire);
+                        bundle1.putSerializable("listNom", nomImage);
+                        intent.putExtras(bundle);
+                        intent.putExtras(bundle1);
+                        startActivity(intent);
+                        break;
+                    }
                 }
 
             }
@@ -86,4 +106,14 @@ public class MenuAction extends Activity {
 
 
     }
+
+    public void setSelectedCountry(int selectedCountryCode){
+
+        this.selectedCountryCode = selectedCountryCode;
+
+    }
+
+
+
+
 }

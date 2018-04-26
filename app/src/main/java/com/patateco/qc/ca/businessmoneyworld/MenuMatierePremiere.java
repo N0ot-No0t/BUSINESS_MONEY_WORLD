@@ -22,10 +22,13 @@ import java.util.ArrayList;
 
 public class MenuMatierePremiere extends Activity {
 
-    int[] photoMatiere = {R.drawable.oil, R.drawable.iron, R.drawable.coppertube,R.drawable.wood,R.drawable.rubber,R.drawable.aluminium,
-            R.drawable.goldbrick, R.drawable.zinc,R.drawable.tungstene,R.drawable.silver,R.drawable.lithiums};
+    int selectedCountryCode;
 
-    String[] nomMatiere = {"Pétrole","Fer","Cuivre","Bois","Caoutchouc","Aluminium","Or","Zinc","Tungstène","Argent","Lithium"};
+
+
+    int[] photoMatiere;
+    String[] nomMatiere;
+
     ArrayList<Integer> imageInventaire;
     ArrayList<String> nomImage;
 
@@ -35,6 +38,32 @@ public class MenuMatierePremiere extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pop_matierepremiere);
             Bundle bundleImage = getIntent().getExtras();
+
+
+            selectedCountryCode = bundleImage.getInt("selectedCountry");
+
+            System.out.println("CC in MMP "+selectedCountryCode);
+
+
+            switch(selectedCountryCode){
+
+                case R.drawable.icon_argentina:
+                    photoMatiere = new int[] {R.drawable.oil, R.drawable.iron, R.drawable.coppertube,R.drawable.wood};
+
+                    nomMatiere = new String[] {"Pétrole","Fer","Cuivre","Bois"};
+                    break;
+                default:
+
+                    photoMatiere = new int[] {R.drawable.oil, R.drawable.iron, R.drawable.coppertube,R.drawable.wood,R.drawable.rubber,R.drawable.aluminium,
+                            R.drawable.goldbrick, R.drawable.zinc,R.drawable.tungstene,R.drawable.silver,R.drawable.lithiums};
+
+                    nomMatiere = new String[] {"Pétrole","Fer","Cuivre","Bois","Caoutchouc","Aluminium","Or","Zinc","Tungstène","Argent","Lithium"};
+
+                    break;
+
+            }
+
+
             imageInventaire = (ArrayList<Integer>)bundleImage.getSerializable("listImage");
             nomImage = (ArrayList<String>)bundleImage.getSerializable("listNom");
 
@@ -48,6 +77,25 @@ public class MenuMatierePremiere extends Activity {
 
                 int imageId = photoMatiere[position];
                 Drawable drawable = getResources().getDrawable(imageId);
+                //__________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                //__________________________________________________________________________________
 
 
                 String matiere="";
@@ -81,6 +129,15 @@ public class MenuMatierePremiere extends Activity {
 
 
 
+
+
+
+    }
+
+
+    public void setSelectedCountry(int selectedCountryCode){
+
+        this.selectedCountryCode = selectedCountryCode;
 
     }
 
