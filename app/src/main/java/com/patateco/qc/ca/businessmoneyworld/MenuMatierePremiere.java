@@ -50,20 +50,147 @@ public class MenuMatierePremiere extends Activity {
             switch(selectedCountryCode){
 
                 case R.drawable.icon_argentina:
-                    photoMatiere = new int[] {R.drawable.oil, R.drawable.iron, R.drawable.coppertube,R.drawable.wood};
+                    photoMatiere = new int[] {R.drawable.coppertube,R.drawable.iron,R.drawable.zinc};
 
-                    nomMatiere = new String[] {"Pétrole","Fer","Cuivre","Bois"};
+                    nomMatiere = new String[] {};
                     break;
-                case R.drawable.icon_usa:
-                    photoMatiere = new int[] {R.drawable.oil};
+                case R.drawable.icon_australia:
+                    photoMatiere = new int[] {};
 
-                    nomMatiere = new String[] {"Pétrole"};
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_brazil:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
                     break;
 
                 case R.drawable.canada_icon:
-                    photoMatiere = new int[] {R.drawable.wood};
+                    photoMatiere = new int[] {};
 
-                    nomMatiere = new String[] {"Bois"};
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_china:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_colombia:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_cuba:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_drc:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_france:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_germany:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_india:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_iran:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_italie:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_japan:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_mexico:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_morroco:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_norway:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_rsa:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+
+                case R.drawable.icon_russia:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_saudia_arabia:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_spain:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_sweden:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_uk:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
+                    break;
+
+                case R.drawable.icon_usa:
+                    photoMatiere = new int[] {};
+
+                    nomMatiere = new String[] {};
                     break;
 
                 default:
