@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -32,6 +33,20 @@ public class MenuMatierePremiere extends Activity {
     ArrayList<Integer> imageInventaire;
     ArrayList<String> nomImage;
 
+    Element fer = new Element("Fer",15.0, R.drawable.iron);
+    Element petrole = new Element("Pétrole",10.0, R.drawable.oil);
+    Element cuivre = new Element("Cuivre",15.0, R.drawable.coppertube);
+    Element bois = new Element("Bois",15.0, R.drawable.wood);
+    Element caoutchouc = new Element("Caoutchouc",15.0, R.drawable.rubber);
+    Element aluminium = new Element("Aluminium",15.0, R.drawable.aluminium);
+    Element or = new Element("Or",15.0, R.drawable.goldbrick);
+    Element zinc = new Element("Zinc",15.0, R.drawable.zinc);
+    Element tungstene = new Element("Tungstène",15.0, R.drawable.tungstene);
+    Element argent = new Element("Argent",15.0, R.drawable.silver);
+    Element Lithium = new Element("Lithium",15.0, R.drawable.lithiums);
+
+    Element [] listeMatierePremiere;
+
 
         @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,154 +65,106 @@ public class MenuMatierePremiere extends Activity {
             switch(selectedCountryCode){
 
                 case R.drawable.icon_argentina:
-                    photoMatiere = new int[] {R.drawable.coppertube,R.drawable.iron,R.drawable.zinc};
 
-                    nomMatiere = new String[] {};
+                    listeMatierePremiere = new Element[] {cuivre, fer, zinc};
+
                     break;
                 case R.drawable.icon_australia:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+                    listeMatierePremiere = new Element[] {or,aluminium};
                     break;
 
                 case R.drawable.icon_brazil:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+                 listeMatierePremiere = new Element[] {fer, bois};
                     break;
 
                 case R.drawable.canada_icon:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+                    listeMatierePremiere = new Element[] {petrole, bois};
                     break;
 
                 case R.drawable.icon_china:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+                    listeMatierePremiere = new Element[] {fer,petrole};
                     break;
 
                 case R.drawable.icon_colombia:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+                    listeMatierePremiere = new Element[] {cuivre};
                     break;
 
                 case R.drawable.icon_cuba:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+                    listeMatierePremiere = new Element[] {bois};
                     break;
 
                 case R.drawable.icon_drc:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+//                    listeMatierePremiere = new Element[] {diamant};
                     break;
 
                 case R.drawable.icon_france:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+//                    listeMatierePremiere = new Element[] {fer,charbon};
                     break;
 
                 case R.drawable.icon_germany:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+                    listeMatierePremiere = new Element[] {petrole};
                     break;
 
                 case R.drawable.icon_india:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+//                    listeMatierePremiere = new Element[] {};
                     break;
 
                 case R.drawable.icon_iran:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+//                    listeMatierePremiere = new Element[] {};
                     break;
 
                 case R.drawable.icon_italie:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+                    listeMatierePremiere = new Element[] {zinc,petrole};
                     break;
 
                 case R.drawable.icon_japan:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+//                    listeMatierePremiere = new Element[] {fer, bois};
                     break;
 
                 case R.drawable.icon_mexico:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+                    listeMatierePremiere = new Element[] {or,zinc,aluminium};
                     break;
 
                 case R.drawable.icon_morroco:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+//                    listeMatierePremiere = new Element[] {};
                     break;
 
                 case R.drawable.icon_norway:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+                    listeMatierePremiere = new Element[] {petrole};
                     break;
 
                 case R.drawable.icon_rsa:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+//                    listeMatierePremiere = new Element[] {};
                     break;
 
 
                 case R.drawable.icon_russia:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+                    listeMatierePremiere = new Element[] {petrole,or};
                     break;
 
                 case R.drawable.icon_saudia_arabia:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+                    listeMatierePremiere = new Element[] {petrole};
                     break;
 
                 case R.drawable.icon_spain:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+//                    listeMatierePremiere = new Element[] {zinc,fer,plomb};
                     break;
 
                 case R.drawable.icon_sweden:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+//                    listeMatierePremiere = new Element[] {fer,cuivre,plomb,zinc};
                     break;
 
                 case R.drawable.icon_uk:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+                    listeMatierePremiere = new Element[] {petrole,fer,zinc};
                     break;
 
                 case R.drawable.icon_usa:
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+                    listeMatierePremiere = new Element[] {petrole};
                     break;
 
                 default:
 
-                    photoMatiere = new int[] {};
-
-                    nomMatiere = new String[] {};
+                    listeMatierePremiere = new Element[] {};
 
                     break;
 
@@ -210,32 +177,14 @@ public class MenuMatierePremiere extends Activity {
 
         ListView listMatiere = (ListView)findViewById(R.id.listMatierepremiere);
         MyAdapter myAdapter = new MyAdapter(MenuMatierePremiere.this,nomMatiere,photoMatiere);
-        listMatiere.setAdapter(myAdapter);
+        TabAdapter tabAdapter = new TabAdapter(MenuMatierePremiere.this,listeMatierePremiere);
+        listMatiere.setAdapter(tabAdapter);
         listMatiere.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                int imageId = photoMatiere[position];
+                int imageId = listeMatierePremiere[position].getImage();
                 Drawable drawable = getResources().getDrawable(imageId);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                 String matiere="";

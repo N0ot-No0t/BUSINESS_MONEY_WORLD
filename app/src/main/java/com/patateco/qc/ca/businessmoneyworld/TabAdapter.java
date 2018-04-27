@@ -9,31 +9,30 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+public class TabAdapter extends ArrayAdapter<String> {
 
-import java.util.ArrayList;
-
-public class MyAdapter extends ArrayAdapter<String> {
-
-     String [] names;
-     int [] flags;
-     Context mContext;
+    String [] names;
+    int [] flags;
+    Context mContext;
+    Element [] listeElement;
 
 
-    public MyAdapter(Context context, String [] countryNames, int [] countryFlags){
+
+    public TabAdapter(Context context,Element [] listeElement){
 
         super(context,R.layout.listitem_layout);
-        this.names = countryNames;
-        this.flags = countryFlags;
+
+        this.listeElement = listeElement;
+
         this.mContext = context;
 
     }
-    
+
 
     @Override
     public int getCount(){
 
-        return names.length;
+        return listeElement.length;
 
     }
 
@@ -50,13 +49,15 @@ public class MyAdapter extends ArrayAdapter<String> {
             converterView = mInflater.inflate(R.layout.listitem_layout, parent, false);
             mViewHolder.mFlag = (ImageView) converterView.findViewById(R.id.imageView);
             mViewHolder.mName = (TextView) converterView.findViewById(R.id.textView2);
+            mViewHolder.mQtt = (TextView) converterView.findViewById(R.id.textView3);
 
             converterView.setTag(mViewHolder);
         } else {
             mViewHolder = (ViewHolder)converterView.getTag();
         }
-            mViewHolder.mFlag.setImageResource(flags[position]);
-            mViewHolder.mName.setText(names[position]);
+        mViewHolder.mFlag.setImageResource(listeElement[position].getImage());
+        mViewHolder.mName.setText(listeElement[position].getNom());
+        mViewHolder.mQtt.setText(String.valueOf(listeElement[position].getQtt()));
 
         return converterView;
 
@@ -66,6 +67,7 @@ public class MyAdapter extends ArrayAdapter<String> {
 
         ImageView mFlag;
         TextView mName;
+        TextView mQtt;
 
     }
 
