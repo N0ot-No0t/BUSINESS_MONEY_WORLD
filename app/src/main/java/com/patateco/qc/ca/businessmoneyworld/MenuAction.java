@@ -21,9 +21,9 @@ import java.util.ArrayList;
 
 public class MenuAction extends Activity {
 
-    int[] photo = {R.drawable.hammer, R.drawable.stock, R.drawable.minerals};
+    int[] photo = {R.drawable.hammer, R.drawable.stock};
 
-    String[] noms = {"Matière première","StockMarket","Minéraux"};
+    String[] noms = {"Matière première","StockMarket"};
     Drawable drawable;
 
     ArrayList<Integer> imageInventaire;
