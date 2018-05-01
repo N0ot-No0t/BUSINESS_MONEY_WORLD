@@ -22,8 +22,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import Database.MyDBHandler;
+
 
 public class GameActivity extends AppCompatActivity {
+
+    MyDBHandler myDB;
 
     private ImageView imageView;
     private Button getImage;
@@ -47,6 +51,8 @@ public class GameActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_game);
+
+        myDB = new MyDBHandler(this);
 
         double argent = joueur.getCash();
         TextView montant = (TextView) findViewById(R.id.montant);
