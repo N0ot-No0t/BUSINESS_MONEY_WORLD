@@ -20,6 +20,7 @@ import java.util.ArrayList;
 
 public class MenuStockMarket extends Activity {
 
+    int selectedCountryCode;
 
     Element [] listeStock;
 
@@ -48,6 +49,116 @@ public class MenuStockMarket extends Activity {
         Bundle bundleImage = getIntent().getExtras();
         imageInventaire = (ArrayList<Integer>)bundleImage.getSerializable("listImage");
         nomImage = (ArrayList<String>)bundleImage.getSerializable("listNom");
+        selectedCountryCode = bundleImage.getInt("selectedCountry");
+
+        switch(selectedCountryCode){
+
+            case R.drawable.icon_argentina:
+
+                listeStock = new Element[] {};
+
+                break;
+            case R.drawable.icon_australia:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_brazil:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.canada_icon:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_china:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_colombia:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_cuba:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_drc:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_france:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_germany:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_india:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_iran:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_italie:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_japan:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_mexico:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_morroco:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_norway:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_rsa:
+                listeStock = new Element[] {};
+                break;
+
+
+            case R.drawable.icon_russia:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_saudia_arabia:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_spain:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_sweden:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_uk:
+                listeStock = new Element[] {};
+                break;
+
+            case R.drawable.icon_usa:
+                listeStock = new Element[] {};
+                break;
+
+            default:
+
+                listeStock = new Element[] {microsoft,apple,cocacola,amazon,facebook,exxon,intel,bankOfAmerica,ibm,ford,google,walmart,nike};
+
+                break;
+
+        }
+        
 
         ListView listStock = (ListView)findViewById(R.id.liststockmarket);
         //MyAdapter myAdapter = new MyAdapter(MenuStockMarket.this,nomStock,photoStock);
