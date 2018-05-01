@@ -1,28 +1,42 @@
 package com.patateco.qc.ca.businessmoneyworld;
 
+
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import java.util.ArrayList;
+
 
 
 /**
  * Created by Noot on 13/03/2018.
  */
 
+
+
+
 public class MenuPersonnage extends Activity {
     ArrayList<Integer> imageInventaire;
     ArrayList<String> nomImage;
 
+
+    private  Button btnSaveName;
+    private EditText editTxtName;
+    private TextView txtName;
+    private Button btnInventaire;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.pop_pers);
@@ -42,15 +56,32 @@ public class MenuPersonnage extends Activity {
 
         getWindow().setLayout((int)(width*.8),(int)(height*.6));
 
-        Button btnNom = (Button) this.findViewById(R.id.btnNom);
 
-        btnNom.setOnClickListener(new View.OnClickListener() {
+
+        btnSaveName= (Button) findViewById(R.id.btnSave);
+        editTxtName = (EditText) findViewById(R.id.editTextName);
+        txtName = (TextView) findViewById(R.id.txtName);
+        btnInventaire = (Button) findViewById(R.id.btnInventaire);
+
+
+        btnSaveName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(MenuPersonnage.this, MenuNom.class));
+                saveInfo(v);
+                displayName(v);
             }
-        });
+        });}
+
+
+    //save user info
+    public void saveInfo(View view){
+        SharedPreferences sharedPref = getSharedPreferences("userName",Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+
+        editor.putString("username",editTxtName.getText().toString());
+        editor.apply();
 
         Button btnInventaire = (Button)findViewById(R.id.btnInventaire);
         btnInventaire.setOnClickListener(new View.OnClickListener() {
@@ -68,5 +99,15 @@ public class MenuPersonnage extends Activity {
             }
         });
 
+
+        Toast.makeText(this, "Saved!", Toast.LENGTH_LONG).show();
     }
+    //get saved data
+    public void displayName(View view){
+        SharedPreferences sharedPref = getSharedPreferences("userName",Context.MODE_PRIVATE);
+        String name = sharedPref.getString("userName",editTxtName.getText().toString());
+        txtName.setText(name);
+        editTxtName.setVisibility(View.GONE);
+    }
+
 }

@@ -44,6 +44,8 @@ public class MenuMatierePremiere extends Activity {
     Element tungstene = new Element("Tungstène",15.0, R.drawable.tungstene);
     Element argent = new Element("Argent",15.0, R.drawable.silver);
     Element Lithium = new Element("Lithium",15.0, R.drawable.lithiums);
+    Element diamant = new Element("Diamant", 15.0,R.drawable.diamond);
+    Element charbon = new Element("Charbon", 15.0,R.drawable.coal);
 
     Element [] listeMatierePremiere;
 
@@ -94,11 +96,11 @@ public class MenuMatierePremiere extends Activity {
                     break;
 
                 case R.drawable.icon_drc:
-//                    listeMatierePremiere = new Element[] {diamant};
+                    listeMatierePremiere = new Element[] {diamant};
                     break;
 
                 case R.drawable.icon_france:
-//                    listeMatierePremiere = new Element[] {fer,charbon};
+                    listeMatierePremiere = new Element[] {fer,charbon};
                     break;
 
                 case R.drawable.icon_germany:

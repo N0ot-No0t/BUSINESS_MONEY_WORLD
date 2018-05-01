@@ -85,17 +85,6 @@ public class MenuAction extends Activity {
                         startActivity(intent);
                         break;
                     }
-                    case R.drawable.minerals: {
-                        Intent intent = new Intent(MenuAction.this, MenuMineraux.class);
-                        Bundle bundle = new Bundle();
-                        Bundle bundle1 = new Bundle();
-                        bundle.putSerializable("listImage", imageInventaire);
-                        bundle1.putSerializable("listNom", nomImage);
-                        intent.putExtras(bundle);
-                        intent.putExtras(bundle1);
-                        startActivity(intent);
-                        break;
-                    }
                 }
 
             }
