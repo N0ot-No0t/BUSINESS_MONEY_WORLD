@@ -46,6 +46,7 @@ public class MenuMatierePremiere extends Activity {
     Element Lithium = new Element("Lithium",15.0, R.drawable.lithiums);
     Element diamant = new Element("Diamant", 15.0,R.drawable.diamond);
     Element charbon = new Element("Charbon", 15.0,R.drawable.coal);
+    Element rubis = new Element("Rubis", 15.0,R.drawable.ruby);
 
     Element [] listeMatierePremiere;
 
@@ -76,7 +77,7 @@ public class MenuMatierePremiere extends Activity {
                     break;
 
                 case R.drawable.icon_brazil:
-                 listeMatierePremiere = new Element[] {fer, bois};
+                 listeMatierePremiere = new Element[] {fer, bois,caoutchouc};
                     break;
 
                 case R.drawable.canada_icon:
@@ -108,11 +109,11 @@ public class MenuMatierePremiere extends Activity {
                     break;
 
                 case R.drawable.icon_india:
-//                    listeMatierePremiere = new Element[] {};
+                    listeMatierePremiere = new Element[] {caoutchouc};
                     break;
 
                 case R.drawable.icon_iran:
-//                    listeMatierePremiere = new Element[] {};
+                    listeMatierePremiere = new Element[] {charbon, or, zinc, cuivre, fer};
                     break;
 
                 case R.drawable.icon_italie:
@@ -120,7 +121,7 @@ public class MenuMatierePremiere extends Activity {
                     break;
 
                 case R.drawable.icon_japan:
-//                    listeMatierePremiere = new Element[] {fer, bois};
+                    listeMatierePremiere = new Element[] {fer, bois};
                     break;
 
                 case R.drawable.icon_mexico:
@@ -128,7 +129,7 @@ public class MenuMatierePremiere extends Activity {
                     break;
 
                 case R.drawable.icon_morroco:
-//                    listeMatierePremiere = new Element[] {};
+                    listeMatierePremiere = new Element[] {petrole,cuivre,rubis};
                     break;
 
                 case R.drawable.icon_norway:
@@ -136,7 +137,7 @@ public class MenuMatierePremiere extends Activity {
                     break;
 
                 case R.drawable.icon_rsa:
-//                    listeMatierePremiere = new Element[] {};
+                    listeMatierePremiere = new Element[] {petrole,diamant,or};
                     break;
 
 
@@ -149,11 +150,11 @@ public class MenuMatierePremiere extends Activity {
                     break;
 
                 case R.drawable.icon_spain:
-//                    listeMatierePremiere = new Element[] {zinc,fer,plomb};
+                    listeMatierePremiere = new Element[] {zinc,fer};
                     break;
 
                 case R.drawable.icon_sweden:
-//                    listeMatierePremiere = new Element[] {fer,cuivre,plomb,zinc};
+                    listeMatierePremiere = new Element[] {fer,cuivre,zinc};
                     break;
 
                 case R.drawable.icon_uk:
@@ -161,7 +162,7 @@ public class MenuMatierePremiere extends Activity {
                     break;
 
                 case R.drawable.icon_usa:
-                    listeMatierePremiere = new Element[] {petrole};
+                    listeMatierePremiere = new Element[] {petrole,caoutchouc,fer};
                     break;
 
                 default:
