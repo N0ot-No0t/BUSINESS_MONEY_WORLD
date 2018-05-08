@@ -31,6 +31,8 @@
             ></activity>
         <activity android:name=".MenuInventaire"
             ></activity>
+        <activity android:name=".InfoPays"
+            ></activity>
     </application>
 
 </manifest>

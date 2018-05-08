@@ -30,6 +30,7 @@ public class MenuStockMarket extends Activity {
     Element microsoft = new Element("Microsoft", 10, R.drawable.microsoft);
     Element apple = new Element("Apple", 10, R.drawable.apple);
     Element cocacola = new Element("Coca Cola", 10, R.drawable.cocacola);
+
     Element amazon = new Element("Amazon", 10, R.drawable.amazon);
     Element facebook = new Element("Facebook", 10, R.drawable.facebook);
     Element exxon = new Element("Exxon Mobil", 10, R.drawable.exxonmobil);
@@ -40,7 +41,6 @@ public class MenuStockMarket extends Activity {
     Element google = new Element("Google", 10, R.drawable.google);
     Element walmart = new Element("Walmart", 10, R.drawable.walmart);
     Element nike = new Element("Nike", 10, R.drawable.nike);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

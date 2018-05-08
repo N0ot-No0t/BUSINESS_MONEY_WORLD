@@ -54,6 +54,7 @@ public class GameActivity extends AppCompatActivity {
 
         myDB = new MyDBHandler(this);
 
+
         double argent = joueur.getCash();
         TextView montant = (TextView) findViewById(R.id.montant);
         montant.setText(String.valueOf(argent));
@@ -65,7 +66,7 @@ public class GameActivity extends AppCompatActivity {
 
         //final TextView txtTest = (TextView)findViewById(R.id.txtTest);
 
-        imageView = (ImageView) this.findViewById(R.id.img);
+        imageView = (ImageView) this.findViewById(R.id.imgPays);
 
         ImageButton btnSettings = (ImageButton) this.findViewById(R.id.btnSettings);
         btnSettings.setOnClickListener(new View.OnClickListener() {

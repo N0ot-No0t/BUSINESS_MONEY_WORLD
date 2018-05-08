@@ -1,10 +1,12 @@
 package com.patateco.qc.ca.businessmoneyworld;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -23,15 +25,27 @@ public class MenuPays extends Activity {
     String[] NAMES = {"ARGENTINA","AUSTRALIA","BRAZIL","CANADA","CHINA","COLOMBIA","CUBA","DEMOCRATIC REPUBLIC OF CONGO","FRANCE","GERMANY","INDIA","IRAN",
             "ITALY","JAPAN","MEXICO","MOROCCO","NORWAY","SOUTH AFRICA","RUSSIA","SAUDI ARABIA","SPAIN","SWEDEN","UNITED KINGDOM","UNITED STATED OF AMERICA"};
 
+
+    int position;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pop_pays);
 
-        ListView listpays = (ListView)findViewById(R.id.listpays);
+        final ListView listpays = (ListView)findViewById(R.id.listpays);
         MyAdapter myAdapter = new MyAdapter(MenuPays.this, NAMES,IMAGES);
         listpays.setAdapter(myAdapter);
+            listpays.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+      Intent infoPays = new Intent(MenuPays.this,InfoPays.class);
 
+      infoPays.putExtra("Pos", position);
+            startActivity(infoPays);
+    }
+});
 
     }
 
