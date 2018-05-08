@@ -63,6 +63,15 @@ public class MenuPersonnage extends Activity {
         txtName = (TextView) findViewById(R.id.txtName);
         btnInventaire = (Button) findViewById(R.id.btnInventaire);
 
+        btnInventaire.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
+
+
 
         btnSaveName.setOnClickListener(new View.OnClickListener() {
             @Override
