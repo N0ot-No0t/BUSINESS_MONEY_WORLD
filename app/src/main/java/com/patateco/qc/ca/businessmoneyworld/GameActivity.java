@@ -69,7 +69,7 @@ public class GameActivity extends AppCompatActivity {
         imageView = (ImageView) this.findViewById(R.id.imgPays);
 
         ImageButton btnSettings = (ImageButton) this.findViewById(R.id.btnSettings);
-        btnSettings.setOnClickListener(new View.OnClickListener() {
+        btnSettings.setOnClickListener(new View.OnClickListener() {   //boutons pour selectionner les options (à developper)
             @Override
             public void onClick(View v) {
 
@@ -80,12 +80,12 @@ public class GameActivity extends AppCompatActivity {
 
         btnPers.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {   //bouton pour le personnage
 
                 imageInventaire.add(R.drawable.aluminium);
                 nomImage.add("aluminium");
                 Intent intent = new Intent(GameActivity.this, MenuPersonnage.class);
-                Bundle bundle = new Bundle();
+                Bundle bundle = new Bundle();         //les bundles servent à envoyer des données a travers des activités afin de les "sauvegarder".
                 Bundle bundle1 = new Bundle();
                 bundle.putSerializable("listImage", imageInventaire);
                 bundle1.putSerializable("listNom", nomImage);
@@ -96,7 +96,7 @@ public class GameActivity extends AppCompatActivity {
         });
 
         ImageButton btnNews = (ImageButton) this.findViewById(R.id.btnNews);
-        btnNews.setOnClickListener(new View.OnClickListener() {
+        btnNews.setOnClickListener(new View.OnClickListener() {  //bouton pour voir les nouvelles qui se passent dans le monde (à developper)
             @Override
             public void onClick(View v) {
 
@@ -106,7 +106,7 @@ public class GameActivity extends AppCompatActivity {
         ImageButton btnAction = (ImageButton) this.findViewById(R.id.btnAction);
         btnAction.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {    //bouton pour les actions
                 Intent intent = new Intent(GameActivity.this, MenuAction.class);
                 Bundle bundle = new Bundle();
                 Bundle bundle1 = new Bundle();
@@ -131,7 +131,7 @@ public class GameActivity extends AppCompatActivity {
 
 
         ImageButton btnNext = (ImageButton) this.findViewById(R.id.btnNext);
-        btnNext.setOnClickListener(new View.OnClickListener() {
+        btnNext.setOnClickListener(new View.OnClickListener() {    //bouton pour passer à la prochaine journée (à déveloper)
             @Override
             public void onClick(View v) {
 
@@ -141,6 +141,9 @@ public class GameActivity extends AppCompatActivity {
 
         selectedCountry = (ImageView) this.findViewById(R.id.selectedCountry);
 
+        /**
+         * La liste de boutons ci-dessous sert à selectionner un certain pays dans la map et faire des actions dessus.
+         */
 
         ImageButton btnArgentina = (ImageButton) this.findViewById(R.id.btnArgentine);
         btnArgentina.setOnClickListener(new View.OnClickListener() {

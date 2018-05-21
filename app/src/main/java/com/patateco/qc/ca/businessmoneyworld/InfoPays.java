@@ -19,22 +19,34 @@ public class InfoPays extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.custom_layout);
 
         Bundle bundle = getIntent().getExtras();
 
         ImageView imgPays = findViewById(R.id.imgPays);
+
         TextView txtPays = findViewById(R.id.nom);
 
-        setContentView(R.layout.custom_layout);
+        ImageView imgBackground = findViewById(R.id.imgBackground);
+
+
 
 
         position = bundle.getInt("Pos");
+
+        System.out.println("####position: "+position);
 
 
         switch (position){
 
 
-            case R.drawable.icon_australia:
+            case 0:
+
+                imgPays.setImageResource(R.drawable.icon_argentina);
+                txtPays.setText("Argentine");
+
+                break;
+            case 1:
 
                 imgPays.setImageResource(R.drawable.icon_australia);
                 txtPays.setText("australie");

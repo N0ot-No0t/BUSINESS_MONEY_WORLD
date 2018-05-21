@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * Created by Lim on 2018-04-17.
  */
 
-    public class MenuAchat extends Activity {
+    public class MenuAchat extends Activity {    //ce menu apparait lorsque l'utilisateur appuie sur un matière première
 
         int nombreUnit= 0;
         ArrayList<Integer> imageInventaire = new ArrayList<Integer>();
@@ -45,7 +45,7 @@ import java.util.ArrayList;
 
             buttonplus.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
+                public void onClick(View v) {   //bouton pour augmenter la quantité voulue
                     nombreUnit = nombreUnit + 1;
                     nbUnit.setText(String.valueOf(nombreUnit));
 
@@ -54,7 +54,7 @@ import java.util.ArrayList;
             });
             buttonmoins.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
+                public void onClick(View v) {  //bouton pour diminuer la quantité voulue
                     if(nombreUnit > 0) {
                         nombreUnit = nombreUnit - 1;
                         nbUnit.setText(String.valueOf(nombreUnit));
@@ -65,7 +65,7 @@ import java.util.ArrayList;
             btnAchat.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(MenuAchat.this," Vous avez acheter "+nombreUnit+" unit de "+nomObjet.getText()+"",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MenuAchat.this," Vous avez acheté "+nombreUnit+" unit de "+nomObjet.getText()+"",Toast.LENGTH_SHORT).show();
                     imageInventaire.add(R.drawable.oil);
                     nomImage.add(nomObjet.getText().toString());
 
@@ -73,7 +73,7 @@ import java.util.ArrayList;
             });
             btnInventaire.setOnClickListener(new View.OnClickListener() {
                 @Override
-                    public void onClick(View v) {
+                    public void onClick(View v) {      //bouton pour ouvrir l'inventaire
                     Intent intent = new Intent(MenuAchat.this, MenuInventaire.class);
                     Bundle bundle = new Bundle();
                     Bundle bundle1 = new Bundle();

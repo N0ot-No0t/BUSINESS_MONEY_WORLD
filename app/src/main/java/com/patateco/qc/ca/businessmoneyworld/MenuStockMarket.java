@@ -27,6 +27,10 @@ public class MenuStockMarket extends Activity {
     ArrayList<Integer> imageInventaire;
     ArrayList<String> nomImage;
 
+    /*
+     *Liste de toutes les firmes présentes dans la bourse
+     */
+
     Element microsoft = new Element("Microsoft", 10, R.drawable.microsoft);
     Element apple = new Element("Apple", 10, R.drawable.apple);
     Element cocacola = new Element("Coca Cola", 10, R.drawable.cocacola);

@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * Created by Noot on 27/03/2018.
  */
 
-public class MenuAction extends Activity {
+public class MenuAction extends Activity {   //cette classe est activée lorsque l'utilisateur appuie sur l'icône "valise"
 
     int[] photo = {R.drawable.hammer, R.drawable.stock};
 
@@ -57,7 +57,7 @@ public class MenuAction extends Activity {
                 int imageId = photo[position];
                 Drawable drawable = getResources().getDrawable(imageId);
                 switch (imageId) {
-                    case R.drawable.hammer: {
+                    case R.drawable.hammer: {    //l'option de voir les matières premieres
                         Intent intent = new Intent(MenuAction.this, MenuMatierePremiere.class);
                         Bundle bundle = new Bundle();
                         Bundle bundle1 = new Bundle();
@@ -67,14 +67,14 @@ public class MenuAction extends Activity {
                         intent.putExtras(bundle1);
                         MenuMatierePremiere menuMatierePremiere = new MenuMatierePremiere();
 
-                        selectedCountryCode = bundleImage.getInt("selectedCountry");
+                        selectedCountryCode = bundleImage.getInt("selectedCountry");   //la valeur numérique du pays sélectionnée est passe encore une fois avec des bundles
                         intent.putExtra("selectedCountry",selectedCountryCode);
                         System.out.println("CC in MA "+selectedCountryCode);
 
                         startActivity(intent);
                         break;
                     }
-                    case R.drawable.stock: {
+                    case R.drawable.stock: {    //l'option de voir les firmes qui participent à l'économie du jeu (à developper)
                         Intent intent = new Intent(MenuAction.this, MenuStockMarket.class);
                         Bundle bundle = new Bundle();
                         Bundle bundle1 = new Bundle();

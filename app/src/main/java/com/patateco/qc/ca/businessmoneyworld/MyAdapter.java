@@ -13,7 +13,7 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
-public class MyAdapter extends ArrayAdapter<String> {
+public class MyAdapter extends ArrayAdapter<String> {    //cet adapter est assez désuet car le TabAdapter à été modifié pour satisfaire nos besoins, mais on l'a gardé comme référence
 
      String [] names;
      int [] flags;

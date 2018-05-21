@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class TabAdapter extends ArrayAdapter<String> {
+public class TabAdapter extends ArrayAdapter<String> {   //cet adapteur set à afficher ds objets dans les ArrayList dans une ListView
 
     String [] names;
     int [] flags;

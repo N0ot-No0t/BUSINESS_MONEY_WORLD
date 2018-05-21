@@ -33,6 +33,10 @@ public class MenuMatierePremiere extends Activity {
     ArrayList<Integer> imageInventaire;
     ArrayList<String> nomImage;
 
+    /*
+     * Tous les matériaux présents dans le jeu
+     */
+
     Element fer = new Element("Fer",15.0, R.drawable.iron);
     Element petrole = new Element("Pétrole",10.0, R.drawable.oil);
     Element cuivre = new Element("Cuivre",15.0, R.drawable.coppertube);
